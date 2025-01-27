@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Application.cpp" />
+    <ClCompile Include="AppMain.cpp" />
+    <ClCompile Include="Character.cpp" />
+    <ClCompile Include="Objects\Enemy\EnemyBase.cpp" />
+    <ClCompile Include="Objects\Food\Food.cpp" />
+    <ClCompile Include="Objects\Food\PowerFood.cpp" />
+    <ClCompile Include="Objects\GameObjectBase.cpp" />
+    <ClCompile Include="Objects\Player\Player.cpp" />
+    <ClCompile Include="Objects\Wall\Wall.cpp" />
+    <ClCompile Include="Scenes\InGame\InGameScene.cpp" />
+    <ClCompile Include="Scenes\InGame\ResultScene.cpp" />
+    <ClCompile Include="Scenes\SceneManager.cpp" />
+    <ClCompile Include="Scenes\Title\TitleScene.cpp" />
+    <ClCompile Include="Utility\Collision.cpp" />
+    <ClCompile Include="Utility\InputManager.cpp" />
+    <ClCompile Include="Utility\ProjectConfig.cpp" />
+    <ClCompile Include="Utility\ResourceManager.cpp" />
+    <ClCompile Include="Utility\StageData.cpp" />
+    <ClCompile Include="Utility\Vector2D.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Application.h" />
+    <ClInclude Include="Character.h" />
+    <ClInclude Include="Objects\Enemy\EnemyBase.h" />
+    <ClInclude Include="Objects\Food\Food.h" />
+    <ClInclude Include="Objects\Food\PowerFood.h" />
+    <ClInclude Include="Objects\GameObject.h" />
+    <ClInclude Include="Objects\GameObjectBase.h" />
+    <ClInclude Include="Objects\Player\Player.h" />
+    <ClInclude Include="Objects\Wall\Wall.h" />
+    <ClInclude Include="Scenes\InGame\InGameScene.h" />
+    <ClInclude Include="Scenes\InGame\ResultScene.h" />
+    <ClInclude Include="Scenes\SceneBase.h" />
+    <ClInclude Include="Scenes\SceneFactory.h" />
+    <ClInclude Include="Scenes\SceneManager.h" />
+    <ClInclude Include="Scenes\Title\TitleScene.h" />
+    <ClInclude Include="Singleton_classtype.h" />
+    <ClInclude Include="Utility\Collision.h" />
+    <ClInclude Include="Utility\InputManager.h" />
+    <ClInclude Include="Utility\ProjectConfig.h" />
+    <ClInclude Include="Utility\ResourceManager.h" />
+    <ClInclude Include="Utility\StageData.h" />
+    <ClInclude Include="Utility\Vector2D.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="Resource\Images\bakuha.png" />
+    <Image Include="Resource\Images\Block\blackblock.png" />
+    <Image Include="Resource\Images\Block\bloak_1.png" />
+    <Image Include="Resource\Images\Block\block.png" />
+    <Image Include="Resource\Images\Block\floor.png" />
+    <Image Include="Resource\Images\Block\hatena.png" />
+    <Image Include="Resource\Images\Block\kai_block.png" />
+    <Image Include="Resource\Images\Block\kara_block.png" />
+    <Image Include="Resource\Images\Block\tika_floor.png" />
+    <Image Include="Resource\Images\cloud1.png" />
+    <Image Include="Resource\Images\cloud2.png" />
+    <Image Include="Resource\Images\cloud3.png" />
+    <Image Include="Resource\Images\cloud4.png" />
+    <Image Include="Resource\Images\cloud5.png" />
+    <Image Include="Resource\Images\cloud6.png" />
+    <Image Include="Resource\Images\dokan_left_down.png" />
+    <Image Include="Resource\Images\dokan_left_up.png" />
+    <Image Include="Resource\Images\dokan_right_down.png" />
+    <Image Include="Resource\Images\dokan_right_up.png" />
+    <Image Include="Resource\Images\Enemy\kuribo.png" />
+    <Image Include="Resource\Images\Enemy\nokonoko.png" />
+    <Image Include="Resource\Images\Enemy\nokonoko_revival.png" />
+    <Image Include="Resource\Images\flag.png" />
+    <Image Include="Resource\Images\flag_siro.png" />
+    <Image Include="Resource\Images\ha0.png" />
+    <Image Include="Resource\Images\ha1.png" />
+    <Image Include="Resource\Images\ha2.png" />
+    <Image Include="Resource\Images\Item\1up_mushroom.png" />
+    <Image Include="Resource\Images\Item\coin.png" />
+    <Image Include="Resource\Images\Item\flower.png" />
+    <Image Include="Resource\Images\Item\mukidasitika_coin.png" />
+    <Image Include="Resource\Images\Item\mushroom.png" />
+    <Image Include="Resource\Images\Item\star.png" />
+    <Image Include="Resource\Images\Mario\dekamarimation.png" />
+    <Image Include="Resource\Images\Mario\dekamario.png" />
+    <Image Include="Resource\Images\Mario\faiyamario.png" />
+    <Image Include="Resource\Images\Mario\fireball.png" />
+    <Image Include="Resource\Images\Mario\mario.png" />
+    <Image Include="Resource\Images\Mario\starmario.png" />
+    <Image Include="Resource\Images\Mario\starsmallmario.png" />
+    <Image Include="Resource\Images\mountain_left.png" />
+    <Image Include="Resource\Images\mountain_right.png" />
+    <Image Include="Resource\Images\mountain_surface.png" />
+    <Image Include="Resource\Images\mountain_surface1.png" />
+    <Image Include="Resource\Images\mountain_surface2.png" />
+    <Image Include="Resource\Images\mountain_up.png" />
+    <Image Include="Resource\Images\pole.png" />
+    <Image Include="Resource\Images\pole_down.png" />
+    <Image Include="Resource\Images\siro1.png" />
+    <Image Include="Resource\Images\sora.png" />
+    <Image Include="Resource\Images\title.png" />
+    <Image Include="Resource\Images\UI\name_mario.png" />
+    <Image Include="Resource\Images\UI\num.png" />
+    <Image Include="Resource\Images\UI\string.png" />
+    <Image Include="Resource\Images\UI\time.png" />
+    <Image Include="Resource\Images\UI\top.png" />
+    <Image Include="Resource\Images\UI\uicoin.png" />
+    <Image Include="Resource\Images\UI\uicoin_1.png" />
+    <Image Include="Resource\Images\UI\world.png" />
+    <Image Include="Resource\Images\yokodokan_left_down.png" />
+    <Image Include="Resource\Images\yokodokan_left_up.png" />
+    <Image Include="Resource\Images\yokodokan_middle_down.png" />
+    <Image Include="Resource\Images\yokodokan_middle_up.png" />
+    <Image Include="Resource\Images\yokodokan_right_down.png" />
+    <Image Include="Resource\Images\yokodokan_right_up.png" />
+    <Image Include="Resource\Images\配置素材\1up配置.png" />
+    <Image Include="Resource\Images\配置素材\NES - Super Mario Bros - World 1-1.png" />
+    <Image Include="Resource\Images\配置素材\NES---Super-Mario-Bros---World-1-1（修正版）.png" />
+    <Image Include="Resource\Images\配置素材\キノコ配置.png" />
+    <Image Include="Resource\Images\配置素材\クリボー.png" />
+    <Image Include="Resource\Images\配置素材\コイン配置.png" />
+    <Image Include="Resource\Images\配置素材\スター配置.png" />
+    <Image Include="Resource\Images\配置素材\緑ノコ.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="Resource\Sounds\BGM_MarioGround.wav" />
+    <Media Include="Resource\Sounds\SE_1Up.wav" />
+    <Media Include="Resource\Sounds\SE_6ConsecutiveFireworks.wav" />
+    <Media Include="Resource\Sounds\SE_Block.wav" />
+    <Media Include="Resource\Sounds\SE_BlockBreak.wav" />
+    <Media Include="Resource\Sounds\SE_CoinPickUp.wav" />
+    <Media Include="Resource\Sounds\SE_Death.wav" />
+    <Media Include="Resource\Sounds\SE_Degeneration.wav" />
+    <Media Include="Resource\Sounds\SE_FireBall.wav" />
+    <Media Include="Resource\Sounds\SE_GameOver.wav" />
+    <Media Include="Resource\Sounds\SE_Goal.wav" />
+    <Media Include="Resource\Sounds\SE_HitPipe.wav" />
+    <Media Include="Resource\Sounds\SE_ItemAppearance.wav" />
+    <Media Include="Resource\Sounds\SE_Kick.wav" />
+    <Media Include="Resource\Sounds\SE_MiniJump.wav" />
+    <Media Include="Resource\Sounds\SE_PipeIn.wav" />
+    <Media Include="Resource\Sounds\SE_PoleTouch.wav" />
+    <Media Include="Resource\Sounds\SE_PowerUp.wav" />
+    <Media Include="Resource\Sounds\SE_Star.wav" />
+    <Media Include="Resource\Sounds\SE_StepOn.wav" />
+    <Media Include="Resource\Sounds\SE_SuperJump.wav" />
+    <Media Include="Resource\Sounds\SE_Touch.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Map\SupeerMario_Map_Hantei.csv" />
+    <None Include="Map\SuperMario_Map.csv" />
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <VCProjectVersion>17.0</VCProjectVersion>
+    <Keyword>Win32Proj</Keyword>
+    <ProjectGuid>{c4d40dd6-3a89-4768-a1a6-649518a5992c}</ProjectGuid>
+    <RootNamespace>Develop</RootNamespace>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v143</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>MultiByte</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="Shared">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets" Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:¥dxlib</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:¥dxlib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:¥dxlib</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:¥dxlib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\dxlib</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\dxlib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <SDLCheck>true</SDLCheck>
+      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <ConformanceMode>true</ConformanceMode>
+      <AdditionalIncludeDirectories>C:\dxlib</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Windows</SubSystem>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>C:\dxlib</AdditionalLibraryDirectories>
+    </Link>
+  </ItemDefinitionGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
