@@ -206,7 +206,7 @@ void Player::Movement(float delta_second)
 	{
 		move_left = rm->GetKey(KEY_INPUT_A);
 		move_right = rm->GetKey(KEY_INPUT_D);
-		jump = rm->GetKeyDown(KEY_INPUT_J);
+		jump = rm->GetKeyDown(KEY_INPUT_W);
 	}
 	
 	if (velocity.x == 0) {
