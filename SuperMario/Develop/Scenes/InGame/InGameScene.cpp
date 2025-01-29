@@ -402,7 +402,7 @@ void InGameScene::LoadStageMapHanteiCSV() const
 	//読み込むファイル名
 	FILE* fp = NULL;
 	//指定ファイルを読み込む
-	fopen_s(&fp, "C:\\PG\\SuperMario\\Develop\\Map/SupeerMario_Map_Hantei.csv", "r");
+	fopen_s(&fp, "Map/SupeerMario_Map_Hantei.csv", "r");
 
 	//エラーチェック
 	if (fp == NULL)
