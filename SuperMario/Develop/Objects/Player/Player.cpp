@@ -48,6 +48,8 @@ void Player::Initialize()
 	move_animation = rm->GetImages("Resource/Images/Mario/mario.png", 9, 9, 1, 32, 32);
 	//dying_animation = rm->GetImages("Resource/Images/dying.png", 11, 11, 1, 32, 32);
 
+
+
 	// 当たり判定の設定
 	collision.is_blocking = true;
 	collision.object_type = eObjectType::player;
@@ -61,6 +63,9 @@ void Player::Initialize()
 	image = move_animation[0];
 
 	wark_count = 0;
+
+	//当たり判定の大きさを設定
+	box_size = Vector2D(25.0f);
 
 	// レイヤーの設定
 	z_layer = 5;
@@ -126,6 +131,12 @@ void Player::Update(float delta_second)
 
 void Player::Draw(const Vector2D& screen_offset) const
 {
+	//当たり判定の可視化
+	Vector2D ul = location - (box_size / 1.5f);
+	Vector2D br = location + (box_size / 1.5f);
+
+	DrawBoxAA(ul.x, ul.y, br.x, br.y, GetColor(255, 0, 0), FALSE);
+
 	// 親クラスの描画処理を呼び出す
 	__super::Draw(screen_offset);
 }
@@ -168,7 +179,7 @@ void Player::OnHitCollision(GameObjectBase* hit_object)
 	// 当たったオブジェクトが敵だったら
 	if (hit_object->GetCollision().object_type == eObjectType::enemy)
 	{
-		//DrawBox(0, 0, 31, 31, GetColor(255, 255, ), TRUE);
+		
 	}
 }
 
