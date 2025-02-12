@@ -2,6 +2,7 @@
 #include "../../Utility/InputManager.h"
 #include "../../Utility/ResourceManager.h"
 #include "DxLib.h"
+#include "../../Utility/ProjectConfig.h"
 
 #define D_ENEMY_SPEED	(50.0f)
 
@@ -13,6 +14,18 @@ EnemyBase::EnemyBase() :
 	now_direction_state(eEnemyDirectionState::LEFT),
 	animation_time(0.0f),
 	animation_count(0),
+	move_left(false),
+	move_right(false),
+	jump(false),
+	jump_flag(false),
+	jump_down(false),
+	G(),
+	IDLE(false),
+	WARK(false),
+	JUMP(false),
+	wark_count(),
+	T(),
+	J(),
 	is_power_up(false),
 	is_destroy(false)
 {
@@ -45,11 +58,27 @@ void EnemyBase::Initialize()
 
 	image = kuribo_move_animation[0];
 
-	velocity = Vector2D(1.5f, 0.0f);
+	velocity = Vector2D(0.0f, 0.0f);
 }
 
 void EnemyBase::Update(float delta_second)
 {
+	float g = 0.5;
+	G += g / 400.0;
+
+	location += velocity * D_ENEMY_SPEED * delta_second;
+
+	if (location.y < 295)
+	{
+		T++;
+		velocity.y += G;
+	}
+	else if (location.y > 295)
+	{
+		G = 0;
+		velocity.y = 0;
+	}
+
 	// プレイヤー状態によって、動作を変える
 	switch (enemy_state)
 	{
@@ -169,8 +198,99 @@ bool EnemyBase::GetDestroy() const
 /// <param name="delta_second">1フレームあたりの時間</param>
 void EnemyBase::Movement(float delta_second)
 {
-	// 移動量 * 速さ * 時間 で移動先を決定する
+	// 移動量 = 速さ * 時間 で移動先を決定する
 	/*location += velocity * D_ENEMY_SPEED * delta_second;*/
+	InputManager* rm = InputManager::GetInstance();
+
+
+	if (jump_flag == true)
+	{
+
+	}
+	else if (jump_down == true)
+	{
+
+	}
+	else
+	{
+		move_left = rm->GetKey(KEY_INPUT_A);
+		move_right = rm->GetKey(KEY_INPUT_D);
+		jump = rm->GetKeyDown(KEY_INPUT_W);
+	}
+
+	if (velocity.x == 0) {
+		IDLE = true;
+		WARK = false;
+	}
+	else
+	{
+		IDLE = false;
+	}
+
+	if (move_left == true)
+	{
+		WARK = true;
+
+		//左移動
+		//移動方向決定
+		velocity.x = -3.0f;
+		flip_flag = TRUE;
+
+	}
+	else if (move_right == true)
+	{
+		WARK = true;
+
+		//右移動
+		//移動方向決定
+		velocity.x = 3.0f;
+		flip_flag = FALSE;
+
+		if (location.x > D_WIN_MAX_X / 2)
+		{
+			location.x = D_WIN_MAX_X / 2;
+		}
+	}
+	else
+	{
+		velocity.x = 0.0f;
+	}
+
+
+	if (jump == true && location.y >=295)
+	{		jump_flag = true;
+		JUMP = true;
+	}
+
+	if (location.y < 150)
+	{
+		jump_flag = false;
+		//// そしてキャラクターの座標( y座標 )に値渡す
+		//charPos.y += velocity;
+	}
+	if (jump_flag == true)
+	{
+		velocity.y -=  0.3f;
+	}
+
+	if (location.y > 300)
+	{
+		// ここで0にしなかったら、地面の下まで行くので
+		/*velocity.y = 0;*/
+
+		// ジャンプのフラグオフに
+		jump_down = false;
+
+
+		JUMP = false;
+
+		jump_flag = false;
+
+		location.y = 295;
+	}
+
+	//jump_downを地面から離れたらtrueにする
+	//地面についたら、jump_downをfalseにする
 }
 
 /// <summary>

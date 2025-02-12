@@ -28,6 +28,8 @@ Player::Player() :
 	WARK(false),
 	JUMP(false),
 	wark_count(),
+	T(),
+	J(),
 	is_power_up(false),
 	is_destroy(false)
 {
@@ -65,10 +67,28 @@ void Player::Initialize()
 
 	// 可動性の設定
 	mobility = eMobilityType::Movable;
+
+	velocity = Vector2D(0.0f, 0.0f);
 }
 
 void Player::Update(float delta_second)
 {
+	float g = 0.5;
+	G += g / 400.0;
+
+	location += velocity * D_PLAYER_SPEED * delta_second;
+
+	if (location.y < 295)
+	{
+		T++;
+		velocity.y += G;
+	}
+	else if (location.y > 295)
+	{
+		G = 0;
+		velocity.y = 0;
+	}
+
 	// プレイヤー状態によって、動作を変える
 	switch (player_state)
 	{
@@ -191,7 +211,6 @@ void Player::SetPowerDown()
 /// <param name="delta_second">1フレームあたりの時間</param>
 void Player::Movement(float delta_second)
 {
-	Vector2D velocity = 0.0f;
 	InputManager* rm = InputManager::GetInstance();
 
 	if (jump_flag==true)
@@ -226,7 +245,7 @@ void Player::Movement(float delta_second)
 			
 			//左移動
 			//移動方向決定
-				velocity.x += -3.0f;
+				velocity.x = -3.0f;
 				flip_flag = TRUE;
 			
 		}
@@ -236,7 +255,7 @@ void Player::Movement(float delta_second)
 
 			//右移動
 			//移動方向決定
-			velocity.x += 3.0f;
+			velocity.x = 3.0f;
 			flip_flag = FALSE;
 
 			if (location.x > D_WIN_MAX_X / 2)
@@ -252,51 +271,40 @@ void Player::Movement(float delta_second)
 	//jump_downを地面から離れたらtrueにする
 	//地面についたら、jump_downをfalseにする
 
-	if (jump == true && location.y == 295)
+	if (jump == true && location.y >= 295)
 	{
 		jump_flag = true;
-		G = true;
 		JUMP = true;
 	}
 
 	if (location.y < 150)
 	{
 		jump_flag = false;
-		jump_down = true;
-		//// そしてキャラクターの座標( y座標 )に値渡す
-		//charPos.y += velocity;
 	}
 
 	if (jump_flag == true)
 	{
-		velocity.y += -7.7f + 2.0f*s;
+		velocity.y -= 0.3f;
 	}
 
-	if (G == true) {
-		s++;
-	}
-
-	if (jump_down == true) {
-		velocity.y += 2.7f + s;
-	}
-
-	if (jump_down == true && location.y >= 295)
+	if (velocity.y == 0.0f)
 	{
-		// ここで0にしなかったら、地面の下まで行くので
-		velocity = 0;
-
-		location.y = 295;
-
-		// ジャンプのフラグオフに
-		jump_down = false;
-
-		G = false;
-
 		JUMP = false;
 	}
 
-	//現在の位置座標に速さを加算する
-	location += velocity * delta_second * 100;
+	if (location.y > 300)
+	{
+		// ここで0にしなかったら、地面の下まで行くので
+		//velocity = 0;
+
+		// ジャンプのフラグオフに
+
+		jump_flag = false;
+
+		location.y = 295;
+
+		JUMP = false;
+	}
 
 	//// 移動量から移動方向を更新
 	//if (Vector2D::Distance(old_location, location) == 0.0f)

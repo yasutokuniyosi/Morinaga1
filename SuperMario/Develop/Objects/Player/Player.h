@@ -51,7 +51,9 @@ private:
 	int WARK;                               //歩いているアニメーション
 	int wark_count;                         //歩くカウント
 	int JUMP;                               //ジャンプするアニメーション
-	int G;                                  //重力
+	float G;                                  //重力
+	int T;                                  //時間
+	int J;                                  //ジャンプしている時間
 
 	// 移動アニメーションの順番
 	const int animation_num[4] = { 0, 1, 2, 1, };
