@@ -1,6 +1,7 @@
 #include "DxLib.h"
 #include "Utility/ProjectConfig.h"
 #include "Scenes/SceneManager.h"
+#include "Objects/BlockObject/BlockManager.h"
 
 // メイン関数（プログラムはここから始まります）
 int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _In_ LPSTR lpCmdLine, _In_ int nShowCmd)
@@ -55,6 +56,56 @@ int WINAPI WinMain(_In_ HINSTANCE hInstance, _In_opt_ HINSTANCE hPrevInstance, _
 
 	DxLib_End();
 
+	//変更
 	return 0;
 
+	BlockManager block_manager;
+
+	Block* block1 = new Block(Vector2D(10.0f, 20.0f), 24, 24, LoadGraph("block_image1.png"));
+	Block* block2 = new Block(Vector2D(50.0f, 60.0f), 24, 24, LoadGraph("block_image2.png"));
+	block_manager.AddBlock(block1);
+	block_manager.AddBlock(block2);
+
+	while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
+	{
+		block_manager.UpdateBlocks(1.0f / 60.0f);
+		block_manager.DrawBlocks(Vector2D(0.0f, 0.0f));
+	}
+
+	block_manager.FinalizeBlocks();
+	DxLib_End();
+	return 0;
 }
+int main()
+{
+	ChangeWindowMode(TRUE), DxLib_Init(), SetDrawScreen(DX_SCREEN_BACK);
+
+	BlockManager block_manager;
+	std::vector<GameObjectBase*> game_objects;
+
+	Block* block1 = new Block(Vector2D(10.0f, 20.0f), 24, 24, LoadGraph("block_image1.png"));
+	Block* block2 = new Block(Vector2D(50.0f, 60.0f), 24, 24, LoadGraph("block_image2.png"));
+	GameObjectBase* player = new GameObjectBase(); // プレイヤーオブジェクトの例
+
+	block_manager.AddBlock(block1);
+	block_manager.AddBlock(block2);
+	game_objects.push_back(player);
+
+	while (ScreenFlip() == 0 && ProcessMessage() == 0 && ClearDrawScreen() == 0)
+	{
+		block_manager.UpdateBlocks(1.0f / 60.0f);
+		block_manager.CheckCollisions(game_objects);
+		block_manager.DrawBlocks(Vector2D(0.0f, 0.0f));
+	}
+
+	block_manager.FinalizeBlocks();
+	for (auto& object : game_objects)
+	{
+		delete object;
+	}
+	game_objects.clear();
+	DxLib_End();
+	return 0;
+}
+
+//ここまで
