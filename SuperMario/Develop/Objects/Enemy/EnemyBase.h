@@ -38,6 +38,18 @@ private:
 	int animation_count;					// アニメーション添字
 	bool is_power_up;						// パワー餌を食べたか？
 	bool is_destroy;						// 死んだ状態になったか？
+	int move_left;                          // 左に動く
+	int move_right;                         //右に動く
+	int jump;                               //ジャンプする
+	int jump_flag;                          //ジャンプするフラグ
+	int jump_down;                          //ジャンプした後に下降する
+	int IDLE;                               //止まっているアニメーション
+	int WARK;                               //歩いているアニメーション
+	int wark_count;                         //歩くカウント
+	int JUMP;                               //ジャンプするアニメーション
+	float G;                                  //重力
+	int T;                                  //時間
+	int J;                                  //ジャンプしている時間
 	//int body_image;                         //体の画像
 
 	const int animation_num[2] = { 0, 1 };

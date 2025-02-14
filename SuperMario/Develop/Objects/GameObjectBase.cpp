@@ -81,6 +81,11 @@ const Vector2D& GameObjectBase::GetLocation() const
 	return location;
 }
 
+const Vector2D& GameObjectBase::GetBoxSize() const
+{
+	return box_size;
+}
+
 /// <summary>
 /// ˆÊ’uî•ñ•ÏXˆ—
 /// </summary>

@@ -19,7 +19,8 @@ class GameObjectBase
 {
 protected:
 	class SceneBase* owner_scene;	// 所有するシーン情報
-	Vector2D			location;		// 位置座標
+	Vector2D			location;		// 位置座標	
+	Vector2D			box_size;		//箱サイズ
 	CapsuleCollision	collision;		// 当たり判定情報
 	int					image;			// 画像情報
 	int					z_layer;		// レイヤー情報
@@ -74,6 +75,9 @@ public:
 	/// </summary>
 	/// <param name="location">変更したい位置情報</param>
 	void SetLocation(const Vector2D& location);
+
+	//当たり判定の大きさを取得する
+	const Vector2D& GetBoxSize() const;
 
 	/// <summary>
 	/// 当たり判定取得処理
