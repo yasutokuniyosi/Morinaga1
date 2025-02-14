@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="InGameScene">
+    <Position X="4.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BIQAAAAAQABAAwQHgGD3bYDrAAAAsCGBABAQAAAQAAA=</HashCode>
+      <FileName>Scenes\InGame\InGameScene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ResultScene">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAEAAAAwAAAAAACAAAAAAAgAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Scenes\InGame\ResultScene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="TitleScene">
+    <Position X="0.75" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAwAAAAAACIAAAAAAgIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Scenes\Title\TitleScene.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Vector2D">
+    <Position X="1" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAEAAAEAAAAQBACAAAAABAgADgAAAAQAA=</HashCode>
+      <FileName>Utility\Vector2D.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CapsuleCollision">
+    <Position X="7.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>JICAAACACAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Utility\Collision.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="CircleCollision" Collapsed="true">
+    <Position X="8.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAQAACACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>Utility\Collision.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Block">
+    <Position X="10.5" Y="1" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQEAAAAAAAAAwEgQAAAAAAAAAAAgAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\BlockObject\BlockData.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="BlockManager" Collapsed="true">
+    <Position X="1.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAQgAAAAAAAAAEAAAAAAAAAgAAACAAAAAAAAABAA=</HashCode>
+      <FileName>Objects\BlockObject\BlockManager.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="ePlayerState" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAIA=</HashCode>
+      <FileName>Objects\Player\Player.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="eMobilityType" Collapsed="true">
+    <Position X="3.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAA=</HashCode>
+      <FileName>Objects\GameObjectBase.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="eSceneType" Collapsed="true">
+    <Position X="3.5" Y="0.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAAAABAAAAAAEAAAAAAAAAAAAACEAAAA=</HashCode>
+      <FileName>Scenes\SceneBase.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="eObjectType" Collapsed="true">
+    <Position X="6.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IQAAAAAAAAAAAAAAIAAAAAAAAAAAAAABAAAEAAAAAAI=</HashCode>
+      <FileName>Utility\Collision.h</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Yu Gothic UI" Size="9" />
+</ClassDiagram>

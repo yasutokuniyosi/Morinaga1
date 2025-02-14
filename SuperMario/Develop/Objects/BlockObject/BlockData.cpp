@@ -15,7 +15,7 @@ Block::Block(const Vector2D& position, int width, int height, int image)
 
 void Block::Initialize()
 {
-    // ‰æ‘œ‚Ìƒ[ƒhˆ—
+    // ‰æ‘œ“Ç‚İ‚İˆ—
     this->image = LoadGraph("Resource/Images/Block/block.png");
     if (this->image == -1)
     {
