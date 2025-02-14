@@ -45,6 +45,7 @@ private:
 	int move_left;                          // 左に動く
 	int move_right;                         //右に動く
 	int jump;                               //ジャンプする
+	Vector2D box_size;                         //当たり判定の大きさ
 	int jump_flag;                          //ジャンプするフラグ
 	int jump_down;                          //ジャンプした後に下降する
 	int IDLE;                               //止まっているアニメーション

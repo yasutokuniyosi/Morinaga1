@@ -72,9 +72,8 @@ void InGameScene::Initialize()
 
 	// モードによって、生成するオブジェクトを変える
 			// 生成位置の情報
-	player = CreateObject<Player>(Vector2D(100,100));
 	enemybase = CreateObject<EnemyBase>(Vector2D(150, 100));
-
+	player = CreateObject<Player>(Vector2D(100, 100));
 }
 
 eSceneType InGameScene::Update(const float& delta_second)

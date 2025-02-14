@@ -73,16 +73,19 @@ void Player::Initialize()
 	// 可動性の設定
 	mobility = eMobilityType::Movable;
 
+	//ベロシティの初期化
 	velocity = Vector2D(0.0f, 0.0f);
 }
 
 void Player::Update(float delta_second)
 {
+	//重力の計算
 	float g = 0.5;
 	G += g / 400.0;
 
 	location += velocity * D_PLAYER_SPEED * delta_second;
 
+	//地面では重力は働かないようにする
 	if (location.y < 295)
 	{
 		T++;
@@ -224,6 +227,7 @@ void Player::Movement(float delta_second)
 {
 	InputManager* rm = InputManager::GetInstance();
 
+	//ジャンプ中は、ジャンプできないようにする
 	if (jump_flag==true)
 	{
 
@@ -239,6 +243,7 @@ void Player::Movement(float delta_second)
 		jump = rm->GetKeyDown(KEY_INPUT_W);
 	}
 	
+	//操作がされてないときは立っている画像を表示する
 	if (velocity.x == 0) {
 		IDLE = true;
 		WARK = false;
@@ -252,6 +257,7 @@ void Player::Movement(float delta_second)
 
 		if (move_left == true)
 		{
+			//歩いている画像を表示する
 			WARK = true;
 			
 			//左移動
@@ -262,6 +268,7 @@ void Player::Movement(float delta_second)
 		}
 		else if (move_right == true)
 		{
+			//歩いてる画像を表示する
 			WARK = true;
 
 			//右移動
